@@ -4,6 +4,9 @@ AzerothJS is an open source blog engine running on static file servers such as G
 
 ![](./img/azeroth_screenshot.png)
 
+## Live demo
+Check out the [live demo here](http://huytd.github.io/azeroth-js/)
+
 ## What make AzerothJS cool?
 
 - Super lightweight
