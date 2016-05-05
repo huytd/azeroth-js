@@ -14,6 +14,7 @@ Check out the [live demo here](http://huytd.github.io/azeroth-js/)
 - No server side code
 - Made for Github Pages
 - Easy to customization
+- Static HTML Generator
 
 ## How to use?
 
@@ -37,6 +38,24 @@ Check out the [live demo here](http://huytd.github.io/azeroth-js/)
 2. Create a new post in `*.md` format and save to `posts` folder
 3. Upload the everything to your web host
 4. Done
+
+## Two display mode
+Azeroth has 2 display mode: **Live Markdown** and **Static HTML**.
+
+If you point your browser to http://yoursite.com/#/slugged-post-name, **Live Markdown** mode will be used to render HTML content directly from Markdown file.
+
+One problem of **Live Markdown** is: it's unable to display the content when you share the site on social networks like Facebook or Twitter. To solve this issue, we use **Static HTML**
+
+## How to generate Static HTML 
+Run this script in your root folder:
+
+```
+node generator.js
+```
+
+The script will automatically convert all `*.md` files in `/posts` folder to `*.html`.
+
+Now you can list your HTML pages in `home.md` instead of markdown files.
 
 ## How to customize?
 
