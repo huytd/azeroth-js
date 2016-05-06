@@ -64,20 +64,20 @@ Now you can list your HTML pages in `home.md` instead of markdown files.
 ### Change code highlighting theme
 The original theme for the code highlighting is `Tomorrow Night`. If you don't like it, there are many pre-installed themes inside `css/highlight` folder. Pick one and replace to `line 6` of `index.html`:
 
-```
+```html
 <link rel="stylesheet" href="./css/highlight/tomorrow-night.css">
 ```
 
 ### Change the font family
 The original font for the blog is `Roboto Slab`. You can change the new font by replacing `line 4` of `index.html`:
 
-```
+```html
 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
 ```
 
 And change the font in `css/theme.css`:
 
-```
+```css
 * {
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
@@ -88,7 +88,7 @@ And change the font in `css/theme.css`:
 ### Insert your Social links
 There are some social icon links in `footer`, put your own one by edit the `index.html`:
 
-```
+```html
 <div class="footer">
     <p>Created with <a href="http://github.com/huytd/azeroth-js">azeroth.js</a></p>
     <div class="social">
@@ -101,11 +101,11 @@ There are some social icon links in `footer`, put your own one by edit the `inde
 </div>
 ```
 
-### Google analytics
+### Google Analytics
 
 In the end of `index.html` and `template.html`, there is a line:
 
-```
+```js
 ga('create', 'Insert-Your-GA-ID-Here', 'auto');
 ```
 
