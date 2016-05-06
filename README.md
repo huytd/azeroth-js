@@ -30,7 +30,7 @@ Check out the [live demo here](http://huytd.github.io/azeroth-js/)
 
 ### Use with Github Pages
 1. Create your Github Pages
-2. Clone the this project and push it to your Github Pages
+2. Clone this project and push it to your Github Pages
 3. Every time you want to write, create a new `*.md` file in `posts` folder and write with your favorite Markdown Editor
 4. Modify `posts/home.md`, list your posts here
 5. Commit and push everything here. Done!
@@ -109,7 +109,7 @@ In the end of `index.html` and `template.html`, there is a line:
 ga('create', 'Insert-Your-GA-ID-Here', 'auto');
 ```
 
-Repalce `Insert-Your-GA-ID-Here` with your Google Analytics ID to start monitoring your blog.
+Replace `Insert-Your-GA-ID-Here` with your Google Analytics ID to start monitoring your blog.
 
 # License
-MIT
+[MIT](https://opensource.org/licenses/MIT)
