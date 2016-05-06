@@ -1,13 +1,15 @@
 # AzerothJS
 
-AzerothJS is an open source blog engine running on static file servers such as Github Pages or any web hosting.
+AzerothJS is an open source blog engine running on static file servers such as Github Pages or any web hosting. 
+
+In short: 100% client-side JavaScript. 
 
 ![](./img/azeroth_screenshot.png)
 
 ## Live demo
 Check out the [live demo here](http://huytd.github.io/azeroth-js/)
 
-## What make AzerothJS cool?
+## What makes AzerothJS cool?
 
 - Super lightweight
 - No installation needed
