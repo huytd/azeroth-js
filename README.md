@@ -111,5 +111,11 @@ ga('create', 'Insert-Your-GA-ID-Here', 'auto');
 
 Replace `Insert-Your-GA-ID-Here` with your Google Analytics ID to start monitoring your blog.
 
+# Uhmmm, you made it, but did you use it?
+
+Yes, I'm using it for my personal blog (http://huytd.github.io/), it's in Vietnamese.
+
+If you prefer to read English version, Goole Translate can help (https://translate.google.com/translate?sl=auto&tl=en&js=y&prev=_t&hl=en&ie=UTF-8&u=http%3A%2F%2Fhuytd.github.io%2F&edit-text=)
+
 # License
 [MIT](https://opensource.org/licenses/MIT)
