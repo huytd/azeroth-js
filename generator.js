@@ -26,7 +26,7 @@ fs.readdir(__dirname + '/posts/', function(err, files) {
 			  	var title = '';
 			  	if (lines.length > 0) {
 			  		title = lines[0].replace(/#/g, '').replace("\r\n", '').replace("\n", '');
-			  		if (lines[lines.length - 6].indexOf('<meta') == 0) {
+			  		if (lines.length > 6 && lines[lines.length - 6].indexOf('<meta') == 0) {
 			  			metaData = lines.slice(lines.length - 6).join('\n');
 			  			markdownPost = markdownPost.split('\n');
 			  			markdownPost.splice(markdownPost.length - 6);
