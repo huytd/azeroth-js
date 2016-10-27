@@ -45,3 +45,17 @@ eam id latine meliore ullamcorper, quo feugait deleniti accusata cu. Ornatus pos
 - aiwef
 - [ ] awiefzcxv
 - iefiwef
+
+## Math
+
+So, $A = 5$ and `$A^{2} = 9$` then `$B_{1} = 8$`
+
+A longer math:
+
+<pre class="math">
+$$
+\displaystyle\sum_{i=1}^{n}\frac{1}{\theta_{0} + \theta_{1}}
+$$
+</pre>
+
+End of math
