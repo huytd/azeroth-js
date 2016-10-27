@@ -120,6 +120,12 @@ html, body {
     margin-right: 10px;
 }
 
+.large-image {
+    margin-left: calc(-1 * ((50vw - 50%)));
+    max-width: 96vw;
+    transform: translateX(calc(50vw - 50%));
+}
+
 .footer {
     text-align: center;
     background: #3498db;
