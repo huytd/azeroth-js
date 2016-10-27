@@ -1,6 +1,18 @@
 var fs = require('fs');
 var marked = require('./js/marked.js');
 
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false, // IMPORTANT, because we do MathJax before markdown,
+                  //            however we do escaping in 'CreatePreview'.
+  smartLists: true,
+  smartypants: false
+});
+
 var templateHtml = '';
 fs.readFile('template.html', function (err, data) {
   if (err)

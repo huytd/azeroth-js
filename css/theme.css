@@ -71,6 +71,16 @@ pre code, pre code * {
     font-family: monospace !important;
 }
 
+pre.math {
+  background: transparent !important;
+  text-align: center;
+  padding-top: 20px; padding-bottom: 20px;
+}
+
+code.math {
+  background: transparent !important;
+}
+
 a {
     text-decoration: none;
     color: #e74c3c;
