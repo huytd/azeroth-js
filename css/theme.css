@@ -95,6 +95,13 @@ img {
     border-radius: 3px;
 }
 
+.full-width {
+    text-align: center;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+}
+
 html, body {
     margin: 0; padding: 0;
 }
