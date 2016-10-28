@@ -22,6 +22,28 @@ fs.readFile('template.html', function (err, data) {
 });
 
 fs.readdir(__dirname + '/posts/', function(err, files) {
+  if (err) return;
+  files.forEach(function(f) {
+    if (f.indexOf('.md') != -1 && f != 'home.md') {
+      //- [Markdown Test Page](#lorem-ipsum)
+      fs.readFile(__dirname + '/posts/' + f, 'utf8', (err, data) => {
+        if (err) throw err;
+        var firstLine = data.split("\n")[0];  // READ FIRST LINE
+        var title = firstLine.slice(2, firstLine.length-1); // REMOVE "# " and "\n"
+        var markAnchor = '- [' + title + '](#' + f + ')';
+
+        fs.appendFile('routes.md', markAnchor + "\n", (err) => {
+          if (err) throw err;
+          console.log(markAnchor + " is saved in routes.md");
+        });
+
+      });
+    }
+  })
+});
+
+
+fs.readdir(__dirname + '/posts/', function(err, files) {
     if (err) return;
     files.forEach(function(f) {
         if (f.indexOf('.md') != -1) {
