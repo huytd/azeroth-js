@@ -22,7 +22,7 @@ The source code are available on [Github](http://github.com/huytd/azeroth-js)
 1. Clone this project to your computer
 2. Start simple HTTP server with Python:
   ```
-  python -m SimpleHTTPServer
+  python -m SimpleHTTPServer 3000
   ```
 3. Your blog now available at [http://localhost:3000](http://localhost:3000)
 
