@@ -12,17 +12,17 @@
 
         hljs.initHighlightingOnLoad();
         marked.setOptions({
-          highlight: function(code) {
-            return hljs.highlightAuto(code).value;
-          }
+            highlight: function(code) {
+                return hljs.highlightAuto(code).value;
+            }
         });
 
         var open = function(url) {
-            return new Promise(function(resolve, reject){
+            return new Promise(function(resolve, reject) {
                 var xhr = new XMLHttpRequest;
                 xhr.open('GET', url, true);
 
-                xhr.onload = function () {
+                xhr.onload = function() {
                     if (xhr.status == 200) {
                         resolve(xhr.response);
                     } else {
@@ -42,7 +42,7 @@
             var body = document.querySelector(".main");
             var file = window.location.hash.replace(/#/g, '') + '.md';
             if (body != undefined) {
-                open('./posts/' + file).then(function(data){
+                open('./posts/' + file).then(function(data) {
                     if (data != '') {
                         var lines = data.split('\n');
                         var title = blogTitle;
@@ -50,8 +50,8 @@
                         body.innerHTML = marked(data);
                         document.title = title;
                     }
-                }, function(){
-                    open('./posts/home.md').then(function(data){
+                }, function() {
+                    open('./posts/home.md').then(function(data) {
                         document.title = blogTitle;
                         body.innerHTML = marked(data);
                     });
