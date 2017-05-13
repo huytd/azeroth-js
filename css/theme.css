@@ -1,0 +1,498 @@
+* {
+  font-family: "Inconsolata", "Lucida Console", Monaco, monospace;
+  /*font-family: Menlo, Monaco, Consolas, 'Andale Mono', Helvetica, monospace;*/
+}
+
+.notice {
+  padding: 30px;
+  background: #e74c3c;
+  color: #FFF;
+  line-height: 26px;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 55px;
+  z-index: 1000000;
+  text-align: center;
+}
+
+.notice a {
+  padding: 3px 8px;
+  background: #FFF;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.copyright {
+  font-size: 0.8em;
+  color: #CCC;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+    margin: 0; padding: 0;
+    font-size: 16px;
+    font-weight: 100;
+    overflow-x: hidden;
+}
+
+.fb_iframe_widget {
+  margin-top: 50px;
+  border-top: 1px solid #EEE;
+  padding-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 24px;
+}
+
+ul > li:before {
+  content: "- ";
+  margin-left: -18px;
+  display: inline; float: left;
+}
+
+ul > li > ul > li:before {
+  content: "+ ";
+  margin-left: -18px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  margin-top: 8px;
+  padding-left: 10px;
+  line-height: 24px;
+}
+
+h1 {
+    font-size: 1.8em;
+    line-height: 1.2em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.05em;
+}
+
+h5 {
+    font-size: 0.95em;
+}
+
+h6 {
+    font-size: 0.6em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #FAFAFA;
+    padding-bottom: 5px;
+}
+
+strong, b, h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+blockquote {
+    font-style: italic;
+    opacity: 0.6;
+    border-left: 3px solid #FAFAFA;
+    padding-left: 16px;
+}
+
+code {
+    background: #FAFAFA;
+    color: #cc6666;
+    padding: 2px; border-radius: 3px;
+    padding-left: 6px; padding-right: 6px;
+    font-size: 0.95em;
+}
+
+.skip code {
+  background: none;
+  color: initial;
+  font-size: 1.0em;
+  font-family: initial;
+  padding: initial;
+}
+
+.hljs {
+    background: none !important;
+    overflow-x: hidden !important;
+}
+
+pre {
+    background: #F8F8F8 !important;
+    padding: 10px; border-radius: 3px;
+    overflow-x: hidden !important;
+}
+
+pre > code {
+    padding: 0 !important; margin: 0 !important;
+    background: none;
+}
+
+pre code, pre code * {
+    font-size: 1.0em !important;
+}
+
+pre.math {
+  background: transparent !important;
+  text-align: center;
+  padding-top: 20px; padding-bottom: 20px;
+}
+
+code.math {
+  background: transparent !important;
+}
+
+a {
+    text-decoration: none;
+    color: #e74c3c;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+table {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+}
+
+table thead {
+    background: #EFEFEF;
+}
+
+table thead th {
+    padding: 8px;
+    font-weight: bold;
+}
+
+table td {
+    padding: 8px;
+    margin: 0;
+    border-bottom: 1px solid #EEE;
+}
+
+table tr:nth-last-child(1) td {
+    border-bottom: none;
+}
+
+.container {
+    max-width: 700px;
+    height: auto;
+    min-height: calc(100% - 260px);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main p {
+  text-align: justify;
+  line-height: 150%;
+}
+
+.main p img {
+    display: block;
+    margin: auto;
+}
+
+.header {
+    background: #FAFAFA;
+    padding: 30px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 22px;
+    position: relative;
+}
+
+.header .icon {
+    margin-right: 10px;
+}
+
+.footer {
+    text-align: center;
+    background: #FAFAFA;
+    padding: 30px;
+}
+
+.footer p, .footer p > * {
+    font-size: 12px;
+    color: #BBB;
+}
+
+.footer p a {
+    font-weight: bold;
+}
+
+.footer .social {
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+  color: #CCC;
+  margin-left: -20px;
+  margin-right: 10px;
+  content: "#";
+}
+
+h1 {
+  counter-reset: first;
+}
+
+h2 {
+  counter-increment: first;
+  counter-reset: second;
+}
+h2:before {
+  content: counter(first) ".";
+}
+
+h3 {
+  counter-increment: second;
+  counter-reset: third;
+}
+h3:before {
+  content: counter(first) "." counter(second) ".";
+}
+
+h4 {
+  counter-increment: third;
+}
+h4:before {
+  content: counter(first) "." counter(second) "." counter(third) ".";
+}
+
+.box-green {
+  background: #F1F8E9 !important;
+  border: 1px solid #C5E1A5;
+  border-radius: 3px;
+  line-height: 1.4em;
+}
+
+.box-orange {
+  background: #FFF3E0 !important;
+  border: 1px solid #FFCC80;
+  border-radius: 3px;
+  line-height: 1.4em;
+}
+
+.box-yellow {
+  background: #FFFDE7 !important;
+  border: 1px solid #FFF59D;
+  border-radius: 3px;
+  line-height: 1.4em;
+}
+
+.box-red {
+  background: #ffebee !important;
+  border: 1px solid #ef9a9a;
+  border-radius: 3px;
+  line-height: 1.4em;
+}
+
+.box-violet {
+  background: #EDE7F6 !important;
+  border: 1px solid #B39DDB;
+  border-radius: 3px;
+  line-height: 1.4em;
+}
+
+.box-blue {
+  background: #E1F5FE !important;
+  border: 1px solid #81D4FA;
+  border-radius: 3px;
+  line-height: 1.4em;
+}
+
+.box-white {
+  background: #FAFAFA !important;
+  border: 1px solid #EEEEEE;
+  border-radius: 3px;
+  line-height: 1.4em;
+}
+
+.cover {
+  margin-left: calc(-1 * ((50vw - 50%)));
+  width: 99vw;
+  transform: translateX(calc(50vw - 50%));
+  clear: both;
+  height: 75vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cover-holder {
+}
+
+.cover img {
+  width: 100%;
+  pointer-events: none;
+}
+
+@media print {
+  .cover, .cover-holder, .header, .footer {
+    display: none;
+  }
+
+  html, body {
+    font-size: 16px;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    margin: 15px 0 15px 0;
+  }
+}
+
+::selection {
+  background: #FFF5B8;
+  display: block; }
+
+::-moz-selection {
+  background: #FFF5B8;
+  display: block; }
+
+.other-tags {
+  padding: 10px;
+}
+
+.topic-tag {
+  display: inline-block;
+  padding: 5px 8px;
+  margin: 5px;
+  background: #EEE;
+}
+
+.container .comments {
+  margin-top: 30px;
+}
+
+.container .comments .loading {
+  padding: 30px;
+  background: url(../img/loading.gif) no-repeat center center;
+  display: block;
+}
+
+.container .comments .login {
+  display: none;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  background: #FAFAFA;
+}
+
+.container .comments .login button {
+  background: #3498db;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 5px;
+  color: #FFF;
+  font-size: 1.0em;
+  cursor: pointer;
+}
+
+.container .comments .comment-input {
+  margin-top: 10px;
+  display: none;
+  flex-direction: row;
+}
+
+.container .comments .comment-input .avatar {
+  flex-basis: 32px;
+  width: 32px; height: 32px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.container .comments .comment-input .input {
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.container .comments .comment-input .input textarea {
+  padding: 5px;
+  outline: none;
+  font-size: 1.0em;
+  border: 1px solid #CCC;
+  resize: none;
+  border-radius: 3px;
+  min-height: 50px;
+  max-height: 120px;
+}
+
+.container .comments .comment-input .input span {
+  flex-basis: 14px;
+  font-size: 0.8em;
+  margin-top: 5px;
+  text-align: right;
+  color: #555;
+}
+
+.container .comments .comment-input .input span kbd {
+  background: #FAFAFA;
+  padding: 3px;
+}
+
+.container .comments .comment-list {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+
+.container .comments .comment-list li {
+  display: flex;
+  flex-direction: row;
+}
+
+.container .comments .comment-list li:before {
+  display: none;
+  content: "";
+}
+
+.container .comments .comment-list li .avatar {
+  flex-basis: 32px;
+  width: 32px; height: 32px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.container .comments .comment-list li .comment {
+  flex: 1;
+  margin-left: 5px;
+}
+
+.container .comments .comment-list li .comment .metadata {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.container .comments .comment-list li .comment .metadata b {
+  color: #000;
+}

@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <title>Admin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="admin.js"></script>
+    <style>
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      outline: none;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      font-size: 14px;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .unpublished {
+      flex-basis: 30%;
+      background: #FAFAFA;
+    }
+
+    .published {
+      flex: 1;
+      background: #F1F1F1;
+    }
+
+    ul {
+      margin: 0; padding: 0;
+      list-style: none;
+    }
+
+    ul li {
+      margin: 5px; padding: 10px;
+      background: #FEFEFE;
+      position: relative;
+      cursor: pointer;
+    }
+
+    ul li .postTitle {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    ul li.sub:hover {
+      background: #e74c3c;
+    }
+    ul li.sub:hover .postDesc textarea, ul li.sub:hover .postTitle a {
+      color: #FFF;
+    }
+
+    ul li .postTitle a {
+      text-decoration: none;
+      color: #e74c3c;
+    }
+
+    ul li .postDesc {
+      width: 100%; height: 50px;
+    }
+
+    ul li .postDesc textarea {
+      outline: none;
+      border: none;
+      padding: 5px 0 5px 0;
+      box-sizing: border-box; 
+      width: 100%; height: 50px;
+      font-size: 14px;
+      resize: none;
+      background: none;
+      color: #000;
+    }
+    
+    .published ul li button {
+      position: absolute;
+      padding: 10px;
+      right: 10px; top: 10px;
+      background: #e74c3c;
+      border: none;
+      color: #FFF;
+      cursor: pointer;
+    }
+
+    .published ul li {
+      padding-left: 50px;
+    }
+
+    .published ul li .moveUp {
+      position: absolute;
+      top: 10px; left: 10px;
+      width: 30px; height: 30px;
+      color: #FFF; text-align: center;
+      line-height: 30px; font-size: 18px;
+      background: #c0392b;
+      cursor: pointer;
+    }
+
+    .published ul li .moveDown {
+      position: absolute;
+      top: 50px; left: 10px;
+      width: 30px; height: 30px;
+      color: #FFF; text-align: center;
+      line-height: 30px; font-size: 18px;
+      background: #c0392b;
+      cursor: pointer;
+    }
+    </style>
+  </head>
+  <body ng-app="adminApp" ng-controller="admin">
+    <div class="unpublished">
+      <ul>
+        <li ng-repeat="post in unpublishedPosts" ng-click="publishPost(post, $index)">
+          <div class="postTitle"><a>{{post.title}}</a></div>
+        </li>
+      </ul>
+    </div>
+    <div class="published">
+      <ul>
+        <li ng-repeat="year in publishYears">
+          <h2>{{ year }}</h2>
+          <ul>
+            <li class="sub" ng-repeat="post in publishedPosts | filter: { year: year }">
+              <div class="moveUp" ng-click="moveUp(post)">+</div>
+              <div class="moveDown" ng-click="moveDown(post)">-</div>
+              <div class="postTitle"><a href="{{post.url}}">{{post.title}}</a></div>
+              <div class="postDesc">
+                <select ng-change="updateAll()" ng-options="year as year for year in publishYears" ng-model="post.year"></select>
+              </div>
+              <button ng-click="unpublishPost(post)">UNPUBLISH</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

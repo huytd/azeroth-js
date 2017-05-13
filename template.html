@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title>{%title%} | Huy's Blog</title>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;"><meta name=viewport content="initial-scale=1.0 maximum-scale=1.0">
+        {%meta%}
+        <link href="../css/inconsolata.css" rel="stylesheet" type="text/css">
+        <link href="../css/theme.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../css/highlight/tomorrow.css">
+        <link rel="stylesheet" href="../css/fontello.css">
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/autosizing.js"></script>
+        <script>
+        hljs.initHighlightingOnLoad();
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <a href="/"><i class="icon icon-emo-coffee"></i> Huy's Blog</a>
+        </div>
+        <div class="container">
+            <div class="main">
+                {%content%}
+                <div class="copyright">
+                Bạn được tùy ý bấm like, trích dẫn hoặc copy, post lại, nhưng vui lòng ghi rõ nguồn và tác giả và không làm thay đổi nội dung bài viết. Nếu không làm vậy, mình hy vọng từ nay về sau bạn sẽ luôn cảm thấy cắn rứt lương tâm, ăn không ngon, ngủ không yên. 😆
+                </div>
+                <!-- Comment -->
+                <div class="comments">
+                  <div id="comment-loading" class="loading"></div>
+                  <div id="login-box" class="login">
+                    Bạn cần <button onclick="login()">Login</button> để comment
+                  </div>
+                  <div id="comment-box" class="comment-input">
+                    <div class="avatar">
+                      <img id="user-avatar" src="" width="32" height="32"/>
+                    </div>
+                    <div class="input">
+                      <textarea id="comment-content" onkeyup="autoSizing(this)" onkeydown="submitComment(event)" placeholder="Comment gõ vào đây :D"></textarea>
+                      <span>Gõ xong nhấn <kbd>Ctrl</kbd> + <kbd>Enter</kbd> để gửi.</span>
+                    </div>
+                  </div>
+                  <ul id="comment-list" class="comment-list"></ul>
+                </div>
+                <!-- End Comment -->
+            </div>
+        </div>
+	    <div class="footer">
+            <p>Created with <a href="http://github.com/huytd/azeroth-js">azeroth.js</a></p>
+            <div class="social">
+                <a target="_blank" href="http://twitter.com/huydotnet"><i class="icon-twitter-squared"></i></a>
+                <a target="_blank" href="http://github.com/huytd"><i class="icon-github-squared"></i></a>
+                <a target="_blank" href="https://thefullsnack.com"><i class="icon-emo-coffee"></i></a>
+            </div>
+        </div>
+        <script type="text/javascript" async src="https://cdn.rawgit.com/mathjax/MathJax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            skipTags: ["script","noscript","style","textarea"]
+          }
+        });
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "",
+            authDomain: "",
+            databaseURL: "",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: ""
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script>
+          let provider = new firebase.auth.GoogleAuthProvider();
+          let auth = firebase.auth();
+          let currentUser = null;
+          let postCommentURL = 'posts/{%postslug%}/comments';
+
+          auth.onAuthStateChanged(function(user) {
+            document.getElementById("comment-loading").style.display = "none";
+            if (user) {
+              currentUser = user;
+              // Logged in
+              document.getElementById("login-box").style.display = "none";
+              document.getElementById("comment-box").style.display = "flex";
+              document.getElementById("user-avatar").setAttribute("src", user.photoURL);
+            } else {
+              // Not login yet
+              document.getElementById("comment-box").style.display = "none";
+              document.getElementById("login-box").style.display = "block";
+            }
+          });
+
+          const login = function() {
+            auth.signInWithPopup(provider)
+              .then(function(result) {
+              }).catch(function(err) {
+              });
+          };
+
+          const encodeHTML = function(s) {
+            return s.replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/>/g, '&gt;');
+          };
+
+          const saveNewComment = function(comment) {
+            if (!currentUser) {
+              return;
+            }
+            let commentData = {
+              user: currentUser.displayName,
+              avatar: currentUser.photoURL,
+              time: (new Date()).getTime(),
+              message: encodeHTML(comment)
+            };
+            database.ref(postCommentURL).push(commentData);
+            document.getElementById("comment-content").value = "";
+          };
+
+          const submitComment = function(e) {
+            let keyCode = e.which || e.keyCode;
+            let ctrlCode = e.ctrlKey || e.metaKey;
+            if (keyCode === 13 && ctrlCode) {
+              let comment = document.getElementById("comment-content").value;
+              saveNewComment(comment);
+            }
+          };
+
+          const filterURLinComment = function(comment) {
+            return comment.replace(/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/g, "<a target='_blank' rel='noopener noreferrer' href='$1'>$1</a>");
+          };
+
+          const addNewComment = function(user, avatar, time, comment) {
+            let commentFiltered = encodeHTML(comment);
+            commentFiltered = filterURLinComment(commentFiltered);
+            let d = new Date(time);
+            let commentTime = d.toLocaleTimeString() + ' ' + d.toLocaleDateString();
+            let html = '<div class="avatar">' +
+              '   <img src="' + avatar + '" width="32" height="32"/>' +
+              ' </div>' +
+              '<div class="comment">' +
+              '  <div class="metadata"><b>' + user + '</b> lúc <span>' + commentTime + '</span></div>' +
+              '  <div class="content">' + commentFiltered
+              '  </div>' +
+              '</div>';
+            let li = document.createElement('li');
+            li.innerHTML = html;
+            document.getElementById("comment-list").append(li);
+          };
+
+          let database = firebase.database();
+          let posts = database.ref(postCommentURL).orderByChild('time');
+          posts.on('child_added', function(data) {
+            addNewComment(data.val().user, data.val().avatar, data.val().time, data.val().message);
+          });
+        </script>
+    </body>
+</html>

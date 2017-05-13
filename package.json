@@ -1,0 +1,24 @@
+{
+  "name": "huytd.github.io",
+  "version": "1.0.0",
+  "description": "AzerothJS is an open source blog engine running on static file servers such as Github Pages or any web hosting.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/huytd/huytd.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huytd/huytd.github.io/issues"
+  },
+  "homepage": "https://github.com/huytd/huytd.github.io#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "socket.io": "^1.7.3"
+  }
+}
