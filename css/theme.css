@@ -1,3 +1,15 @@
+html{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
 * {
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
@@ -102,13 +114,17 @@ html, body {
 .container {
     max-width: 700px;
     height: auto;
-    min-height: calc(100% - 260px);
+    min-height: calc(100vh - 212px);
     margin: 0 auto;
     padding: 20px;
 }
 
+.container a {
+    color: #2980b9;
+}
+
 .header {
-    background: #3498db;
+    background-color: #3498db;
     padding: 30px;
     color: #FFF;
     font-weight: bold;
@@ -128,7 +144,7 @@ html, body {
 
 .footer {
     text-align: center;
-    background: #3498db;
+    background-color: #3498db;
     padding: 30px;
 }
 
