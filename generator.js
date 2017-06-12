@@ -29,7 +29,7 @@ fs.readdir(__dirname + '/posts/', (err, files) => {
       fs.readFile(__dirname + '/posts/' + f, 'utf8', (err, data) => {
         if (err) throw err;
         let firstLine = data.split("\n")[0], // READ FIRST LINE
-          title = firstLine.slice(2, firstLine.length - 1), // REMOVE "# " and "\n"
+          title = firstLine.slice(1).trim(), // REMOVE "# " and "\n"
           markAnchor = '- [' + title + '](#' + f + ')';
 
         fs.appendFile('routes.md', markAnchor + "\n", err => {
