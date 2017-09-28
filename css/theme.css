@@ -58,7 +58,7 @@ blockquote {
 
 code {
     background: #FAFAFA;
-    color: #2980b9;
+    color: #00000;
     padding: 2px; border-radius: 3px;
     padding-left: 6px; padding-right: 6px;
     font-family: monospace;
@@ -124,7 +124,7 @@ html, body {
 }
 
 .header {
-    background-color: #3498db;
+    background-color: #000000;
     padding: 30px;
     color: #FFF;
     font-weight: bold;
@@ -144,7 +144,7 @@ html, body {
 
 .footer {
     text-align: center;
-    background-color: #3498db;
+    background-color: #000000;
     padding: 30px;
 }
 
