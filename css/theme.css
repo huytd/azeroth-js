@@ -136,6 +136,10 @@ html, body {
     margin-right: 10px;
 }
 
+.header > a {
+    font-weight: 400;
+}
+
 .large-image {
     margin-left: calc(-1 * ((50vw - 50%)));
     max-width: 96vw;

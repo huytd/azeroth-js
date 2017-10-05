@@ -107,6 +107,12 @@ There are some social icon links in `footer`, put your own one by edit the `inde
 </div>
 ```
 
+### Night Theme
+Change your CSS link in both the `index.html` and `template.html` to this:
+```html
+<link href="./css/night-theme.css" rel="stylesheet" type="text/css">
+```
+
 ### Google Analytics
 
 In the end of `index.html` and `template.html`, there is a line:
