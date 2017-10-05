@@ -23,9 +23,15 @@ Check out the [live demo here](http://huytd.github.io/azeroth-js/)
 ### Run locally
 1. Clone this project to your computer
 2. Start simple HTTP server with Python:
+
+  **Python2**
   ```
   python -m SimpleHTTPServer 3000
   ```
+  **Python3**
+  ```
+  python -m http.server 3000
+  ```  
 3. Your blog now available at [http://localhost:3000](http://localhost:3000)
 
 ### Use with Github Pages
