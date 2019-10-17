@@ -11,33 +11,39 @@ html{
 }
 
 * {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'EB Garamond', serif;
     font-size: 20px;
     font-weight: 100;
 }
 
 h1 {
     font-size: 1.6em;
+    color: #a546bd;
 }
 
 h2 {
     font-size: 1.2em;
+    color: #a546bd;
 }
 
 h3 {
     font-size: 1.0em;
+    color: #a546bd;
 }
 
 h4 {
     font-size: 0.8em;
+    color: #a546bd;
 }
 
 h5 {
     font-size: 0.6em;
+    color: #a546bd;
 }
 
 h6 {
     font-size: 0.4em;
+    color: #a546bd;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,6 +55,7 @@ strong, b, h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+
 blockquote {
     font-style: italic;
     opacity: 0.6;
@@ -58,7 +65,7 @@ blockquote {
 
 code {
     background: #FAFAFA;
-    color: #2980b9;
+    color: #a70891;
     padding: 2px; border-radius: 3px;
     padding-left: 6px; padding-right: 6px;
     font-family: monospace;
@@ -66,7 +73,7 @@ code {
 }
 
 pre {
-    background: #292824 !important;
+    background: #f58ee7 !important;
     padding: 10px; border-radius: 3px;
     font-family: monospace;
     overflow-x: scroll;
@@ -120,11 +127,11 @@ html, body {
 }
 
 .container a {
-    color: #2980b9;
+    color:#a70891;
 }
 
 .header {
-    background-color: #3498db;
+    background-color: #962faf;
     padding: 30px;
     color: #FFF;
     font-weight: bold;
@@ -148,7 +155,7 @@ html, body {
 
 .footer {
     text-align: center;
-    background-color: #3498db;
+    background-color: #962faf;
     padding: 30px;
 }
 
@@ -165,4 +172,3 @@ html, body {
     text-align: center;
     margin: 0 auto;
 }
-
