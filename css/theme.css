@@ -11,7 +11,7 @@ html{
 }
 
 * {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', monospace;
     font-size: 20px;
     font-weight: 100;
 }
@@ -58,7 +58,7 @@ blockquote {
 
 code {
     background: #FAFAFA;
-    color: #2980b9;
+    color: #8b0000;
     padding: 2px; border-radius: 3px;
     padding-left: 6px; padding-right: 6px;
     font-family: monospace;
@@ -120,11 +120,11 @@ html, body {
 }
 
 .container a {
-    color: #2980b9;
+    color: #8b0000;
 }
 
 .header {
-    background-color: #3498db;
+    background-color: #ff0000;
     padding: 30px;
     color: #FFF;
     font-weight: bold;
@@ -148,7 +148,7 @@ html, body {
 
 .footer {
     text-align: center;
-    background-color: #3498db;
+    background-color: #ff0000;
     padding: 30px;
 }
 
