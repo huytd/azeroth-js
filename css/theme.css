@@ -120,11 +120,11 @@ html, body {
 }
 
 .container a {
-    color: #2980b9;
+    color: #8e29b9;
 }
 
 .header {
-    background-color: #3498db;
+    background-color: #7a34db;
     padding: 30px;
     color: #FFF;
     font-weight: bold;
@@ -148,7 +148,7 @@ html, body {
 
 .footer {
     text-align: center;
-    background-color: #3498db;
+    background-color: #d034db;
     padding: 30px;
 }
 
